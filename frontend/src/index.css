@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b1020;
+  --panel: #0f1724;
+  --accent: #7c3aed;
+  --muted: #9ca3af;
+}
+
+body {
+  @apply bg-[var(--bg)] text-white font-sans;
+}
