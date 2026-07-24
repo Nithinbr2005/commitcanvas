@@ -7,7 +7,7 @@ export default function RepoInput({ onResult, setLoading, setError }) {
   const tryExample = (key) => {
     setError(null)
     setLoading(true)
-    axios.post('/api/repo/fetch', { repoUrl: key })
+    axios.post('https://commit-canvas-api.onrender.com/api/repo/fetch', { repoUrl: key })
       .then(r => {
         onResult(r.data.data)
       })
@@ -23,7 +23,7 @@ export default function RepoInput({ onResult, setLoading, setError }) {
     setError(null)
     setLoading(true)
     try {
-      const r = await axios.post('/api/repo/fetch', { repoUrl: repoUrl.trim() })
+      const r = await axios.post('https://commit-canvas-api.onrender.com/api/repo/fetch', { repoUrl: repoUrl.trim() })
       const data = r.data.data
       if (!data || !data.commits || !Array.isArray(data.commits)) {
         setError('Failed to fetch or parse repository commits')
