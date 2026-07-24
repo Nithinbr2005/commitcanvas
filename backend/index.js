@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 
 const cache = new LRU({ max: 200, ttl: 1000 * 60 * 60 }); // 1 hour
-const PORT = process.env.PORT || 4000;
+const PORT = Number(process.env.PORT || 4001);
 
 // Utility: validate a simple GitHub URL
 function parseGithubUrl(url) {
