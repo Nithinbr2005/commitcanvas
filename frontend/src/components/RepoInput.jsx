@@ -13,7 +13,11 @@ export default function RepoInput({ onResult, setLoading, setError }) {
       })
       .catch(e => {
         console.error(e)
-        setError(e?.response?.data?.error || e.message)
+       setError(
+         typeof e?.response?.data?.error === 'string'
+           ? e.response.data.error
+           : e?.message || 'Something went wrong'
+)
       })
       .finally(() => setLoading(false))
   }
@@ -32,7 +36,11 @@ export default function RepoInput({ onResult, setLoading, setError }) {
       onResult(data)
     } catch (err) {
       console.error(err)
-      setError(err?.response?.data?.error || err.message)
+      setError(
+        typeof err?.response?.data?.error === 'string'
+          ? err.response.data.error
+          : err?.message || 'Something went wrong'
+      )
     } finally {
       setLoading(false)
     }
