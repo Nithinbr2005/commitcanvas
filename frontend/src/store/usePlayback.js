@@ -1,4 +1,4 @@
-import create from 'zustand'
+import { create } from 'zustand'
 
 export const usePlayback = create((set) => ({
   playing: false,
@@ -8,5 +8,5 @@ export const usePlayback = create((set) => ({
   setPlaying: (p) => set({ playing: p }),
   setTime: (t) => set({ time: t }),
   setSpeed: (s) => set({ speed: s }),
-  setDuration: (d) => set({ duration: d })
+  setDuration: (d) => set({ duration: d }),
 }))

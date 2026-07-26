@@ -1,7 +1,25 @@
+# Dependencies
 node_modules/
 server/node_modules/
 client/node_modules/
-.env
-.DS_Store
+frontend/node_modules/
+
+# Production builds
 dist/
+frontend/dist/
+.vercel
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs and OS files
+*.log
+.DS_Store
 .vscode/
+
+# Temporary test scripts
+frontend/fetch_test.js
+frontend/test_fetch.json
+frontend/test_layout.js

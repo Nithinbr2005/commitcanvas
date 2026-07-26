@@ -12,5 +12,9 @@ export default defineConfig({
         secure: false
       }
     }
+  },
+  // Ensure SPA routing works in production builds
+  build: {
+    outDir: 'dist',
   }
 })

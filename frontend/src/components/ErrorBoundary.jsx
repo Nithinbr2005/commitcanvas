@@ -17,12 +17,23 @@ export default class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="p-6 bg-red-900 text-white rounded">
-          <h3 className="text-lg font-semibold">Something went wrong rendering the visualization</h3>
-          <pre className="text-xs mt-2 whitespace-pre-wrap">{String(this.state.error)}</pre>
-          <div className="mt-3">
-            <button onClick={() => this.setState({ hasError: false, error: null })} className="px-3 py-1 bg-slate-700 rounded">Dismiss</button>
+        <div
+          className="p-6 rounded-2xl flex flex-col gap-3"
+          style={{ background: 'rgba(255,82,82,0.08)', border: '1px solid rgba(255,82,82,0.2)' }}
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-red-400 text-lg">⚠</span>
+            <h3 className="font-display font-semibold text-white/80">Something went wrong rendering the visualization</h3>
           </div>
+          <pre className="text-xs text-red-300/70 bg-black/20 rounded-xl p-3 overflow-auto whitespace-pre-wrap font-mono">
+            {String(this.state.error)}
+          </pre>
+          <button
+            onClick={() => this.setState({ hasError: false, error: null })}
+            className="btn-ghost self-start"
+          >
+            Try again
+          </button>
         </div>
       )
     }
