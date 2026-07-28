@@ -7,6 +7,7 @@ import CommitDetailsPanel from '../components/CommitDetailsPanel'
 import { normalizeGitData } from '../utils/normalizeGitData'
 import { analyzeRepository } from '../analytics/repositoryAnalytics'
 import { generateStory } from '../analytics/storyGenerator'
+import RepositoryHealth from '../components/health/RepositoryHealth'
 
 /* ─────────────────────────────────────────
    Milestone type config (colors + icons)
@@ -709,6 +710,9 @@ export default function RepositoryStoryPage() {
                 </div>
               )}
             </motion.div>
+
+            {/* ── Repository Health ──────────────────────────────────────── */}
+            <RepositoryHealth parsedData={parsedData} />
 
             {/* ── Two-column layout ──────────────────────────────────────── */}
             <div className="flex flex-col lg:flex-row gap-5" style={{ alignItems: 'flex-start' }}>
